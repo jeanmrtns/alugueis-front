@@ -44,7 +44,7 @@ export default function House() {
             <footer className="flex flex-col mt-28 gap-4 self-end justify-self-end">
               <span>R$350.000,00</span>
               <Link
-                href="/1234"
+                href={`/${houseId}/criar-proposta`}
                 className="bg-red-600 w-52 px-2 py-4 rounded block text-center text-zinc-50 font-bold hover:bg-red-500 transition-colors"
               >
                 Enviar proposta
