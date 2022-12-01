@@ -3,10 +3,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Bed, Car } from 'phosphor-react'
 import { Header } from '../../components'
+import { imoveis } from '../../utils/imoveis'
 
 export default function House() {
   const router = useRouter()
   const { houseId } = router.query
+
+  const house = imoveis.find((h) => h.codigo === Number(houseId))
+
+  if (!house) router.push('/')
 
   return (
     <>
@@ -16,33 +21,29 @@ export default function House() {
       <Header />
       <div className="container mx-auto mt-14 px-2">
         <h2 className="text-2xl font-bold">Moradia {houseId}</h2>
-        <div className="flex mt-4 items-start gap-4 p-2 rounded border border-zinc-200">
-          <img
-            className="h-96 w-96 rounded"
-            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            alt=""
-          />
+        <div className="flex flex-col-reverse lg:flex-row mt-4 items-start gap-4 p-2 rounded border border-zinc-200">
+          <img className="h-96 w-96 rounded" src={house?.imagem} alt="" />
 
           <div className="w-full">
             <header className="flex items-center justify-between">
-              <strong>Casa do seu Jose</strong>
+              <strong>{house?.nome}</strong>
             </header>
 
             <div>
-              <span className="block mt-4">Pocos de Caldas - MG</span>
-              <span>Codigo: 154</span>
+              <span className="block mt-4">{house?.cidade}</span>
+              <span>Codigo: {house?.codigo}</span>
 
               <span className="flex gap-4 mt-4">
-                <Bed size={24} /> 2
+                <Bed size={24} /> {house?.quartos}
               </span>
 
               <span className="flex gap-4 mt-4">
-                <Car size={24} /> 1
+                <Car size={24} /> {house?.espacoGaragem}
               </span>
             </div>
 
             <footer className="flex flex-col mt-28 gap-4 self-end justify-self-end">
-              <span>R$350.000,00</span>
+              <span>R${house?.valor}</span>
               <Link
                 href={`/${houseId}/criar-proposta`}
                 className="bg-red-600 w-52 px-2 py-4 rounded block text-center text-zinc-50 font-bold hover:bg-red-500 transition-colors"

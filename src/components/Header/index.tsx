@@ -9,7 +9,7 @@ export function Header() {
       </Link>
 
       <div className="flex items-center gap-4">
-        <span>Jean Martins</span>
+        <span className="text-zinc-50">Jean Martins</span>
         <Dropdown />
       </div>
     </header>

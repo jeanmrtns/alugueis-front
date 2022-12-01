@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <Header />
       <main className="container mx-auto px-2">
-        <div className="grid mt-8 lg:grid-cols-2 lg:gap-4">
+        <div className="flex items-center flex-col lg:grid mt-8 lg:grid-cols-2 lg:gap-4">
           {imoveis.map((imovel) => (
             <HouseCard house={imovel} key={imovel.codigo} />
           ))}

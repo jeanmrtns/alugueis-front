@@ -6,10 +6,7 @@ export function Dropdown() {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button className="IconButton" aria-label="Customise options">
-          <img
-            src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            alt="Profile image"
-          />
+          <img src="https://github.com/jeanmrtns.png" alt="Profile image" />
         </button>
       </DropdownMenu.Trigger>
 
@@ -17,12 +14,12 @@ export function Dropdown() {
         <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
           <Link href="/perfil">
             <DropdownMenu.Item className="DropdownMenuItem">
-              Perfil <div className="RightSlot"></div>
+              Perfil
             </DropdownMenu.Item>
           </Link>
           <Link href="/imoveis">
             <DropdownMenu.Item className="DropdownMenuItem">
-              Seus imoveis <div className="RightSlot"></div>
+              Seus imoveis
             </DropdownMenu.Item>
           </Link>
 
