@@ -4,7 +4,7 @@ export default function CriarProposta() {
   return (
     <>
       <Header />
-      <div className="container mx-auto mt-14">
+      <div className="container mx-auto mt-14 px-2">
         <form className="mt-8">
           <h4 className="mb-4 font-bold text-2xl">
             Informe seus dados e sua oferta

@@ -14,7 +14,7 @@ export default function House() {
         <title>Alugueis - Moradia {houseId}</title>
       </Head>
       <Header />
-      <div className="container mx-auto mt-14">
+      <div className="container mx-auto mt-14 px-2">
         <h2 className="text-2xl font-bold">Moradia {houseId}</h2>
         <div className="flex mt-4 items-start gap-4 p-2 rounded border border-zinc-200">
           <img
