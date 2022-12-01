@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Bed, Car } from 'phosphor-react'
+import { useEffect } from 'react'
 import { Header } from '../../components'
 import { imoveis } from '../../utils/imoveis'
 
@@ -11,7 +12,9 @@ export default function House() {
 
   const house = imoveis.find((h) => h.codigo === Number(houseId))
 
-  if (!house) router.push('/')
+  useEffect(() => {
+    if (!house) router.push('/')
+  }, [router, house])
 
   return (
     <>
